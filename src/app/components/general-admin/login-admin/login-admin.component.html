@@ -1,0 +1,81 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span><img src="../../../assets/img/wro/logowro.png" class="logo" style="cursor: pointer;" alt="logo" [routerLink]="['/welcome']"></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Inicia Sesion" [routerLink]="['/loginAdmin']" title="Inicia Sesion">
+      <mat-icon>login</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+  <body>
+
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+    <div class="section">
+      <div class="container">
+        <div class="row full-height justify-content-center">
+          <div class="col-12 text-center align-self-center py-5">
+            <div class="section pb-5 pt-5 pt-sm-2 text-center">
+              <h6 class="mb-0 pb-3"><span>Iniciar Sesion </span><span>Registrarse</span></h6>
+                    <input class="checkbox" type="checkbox" id="reg-log" name="reg-log"/>
+                    <label for="reg-log"></label>
+              <div class="card-3d-wrap mx-auto">
+                <div class="card-3d-wrapper">
+                  <div class="card-front">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-4 pb-3">Iniciar Sesión</h4>
+                        <div class="form-group">
+                          <input type="email" class="form-style" placeholder="Correo Electrónico">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Contraseña">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4" [routerLink]="['/admin/dashboard']" disabled>Iniciar Sesión</a>
+                        <p class="mb-0 mt-4 text-center"><a href="#" class="link">¿Olvidaste tu contraseña?</a></p>
+
+                        <ul class="wrapper">
+                          <li class="icon gmail" (click)="loginGoogle()">
+                            <span><i class="fab fa-google" title="Iniciar Sesión con Google"></i></span>
+                          </li>
+                        </ul>
+                          </div>
+                        </div>
+                      </div>
+                  <div class="card-back">
+                    <div class="center-wrap">
+                      <div class="section text-center">
+                        <h4 class="mb-3 pb-3">Registrarse</h4>
+                        <div class="form-group">
+                          <input type="text" class="form-style" placeholder="Nombre Completo">
+                          <i class="input-icon uil uil-user"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="tel" class="form-style" placeholder="Teléfono">
+                          <i class="input-icon uil uil-phone"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="email" class="form-style" placeholder="Correo Electrónico">
+                          <i class="input-icon uil uil-at"></i>
+                        </div>
+                        <div class="form-group mt-2">
+                          <input type="password" class="form-style" placeholder="Contraseña">
+                          <i class="input-icon uil uil-lock-alt"></i>
+                        </div>
+                        <a href="#" class="btn mt-4" disabled>Registrarme</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    </body>

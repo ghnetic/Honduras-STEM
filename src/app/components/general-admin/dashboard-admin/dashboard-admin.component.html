@@ -1,0 +1,129 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span><img src="../../../assets/img/wro/logowro.png" class="logo" style="cursor: pointer;" alt="logo" [routerLink]="['/welcome']"></span>
+    <span class="example-spacer"></span>
+    <button mat-flat-button color="accent" aria-label="Cerrar Sesión" (click)="logout()" title="Cierra Sesion">
+      Cerrar Sesión
+    </button>
+  </mat-toolbar-row>
+  </mat-toolbar>
+
+<body>
+  <section>
+    <div class="container flow-content">
+      <h2 class="section-title">¡Panel Administrativo!</h2>
+      <ul role="list" class="grid">
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/volunteer.svg" />
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">VOLUNTARIOS</p>
+                <p class="card__position">Ver la información referente a los voluntarios</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" [routerLink]="['/admin/info/volunteer']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/coach.svg"/>
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">COACHES</p>
+                <p class="card__position">Ver la información referente a los coaches</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" disabled="true" [routerLink]="['/admin/info/coach']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/participant.svg"/>
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">PARTICIPANTES</p>
+                <p class="card__position">Ver la información referente a los participantes</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" disabled="true" [routerLink]="['/admin/info/participant']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+      </ul>
+
+      <ul role="list" class="grid">
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/general.svg" />
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">GENERAL</p>
+                <p class="card__position">Ver la información referente a las personas generales</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" [routerLink]="['/admin/info/general']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/vip.svg"/>
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">VIP</p>
+                <p class="card__position">Ver la información referente a las personas VIP</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" [routerLink]="['/admin/info/vip']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+
+        <li>
+          <article class="card" data-visible="false">
+            <div class="card__front flow-content">
+              <img class="card__img mx-auto" src="../../../../assets/img/wro/prensa.svg"/>
+              <div class="flow-content" data-spacing="sm">
+                <p class="card__name">PRENSA</p>
+                <p class="card__position">Ver la información referente a la prensa</p>
+              </div>
+            </div>
+
+            <footer>
+              <button mat-fab color="primary" [routerLink]="['/admin/info/press']" aria-label="Ver" style="margin-bottom: 5px;" title="Ver">
+                <mat-icon>+</mat-icon>
+              </button>
+            </footer>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </section>
+</body>
+

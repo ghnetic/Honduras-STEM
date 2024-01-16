@@ -1,0 +1,22 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.banner{
+  position: relative;
+  margin: 0;
+  margin-top: 1 rem;
+  height: 25rem;
+  width: 25rem;
+}
+
+.logo{
+  width: 190px;
+  height: 60px;
+}
+
+.main{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

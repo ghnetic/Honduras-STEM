@@ -1,0 +1,165 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <span><img src="../../../assets/img/wro/logowro.png" class="logo" style="cursor: pointer;" alt="logo"
+        [routerLink]="['/welcome']"></span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Cerrar Sesion" (click)="logout()"
+      title="Cerrar Sesión">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-container">
+  <mat-sidenav opened mode="side" [class.mat-elevation-z4]="true" class="app-sidenav">
+    <mat-nav-list>
+      <mat-list-item  [routerLink]="['/admin/dashboard']">
+        <mat-icon>dashboard</mat-icon>
+      </mat-list-item>
+      <br>
+      <mat-list-item  [routerLink]="['/admin/info/volunteer']">
+        VOLUNTARIOS
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/admin/info/coach']" disabled="true">
+        COACHES<button mat-flat-button color="warn" [routerLink]="['/admin/info/coach']" style="margin-left: 2rem;">BETA</button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/admin/info/participant']" disabled="true">
+        PARTICIPANTES
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/admin/info/general']">
+        GENERAL
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/admin/info/vip']">
+        VIP
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item  [routerLink]="['/admin/info/press']">
+        PRENSA
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <mat-divider></mat-divider>
+      <mat-list-item routerLink="#" style="margin-top: 6rem;" (click)="logout()">
+        <mat-icon title="Cerrar Sesión">logout</mat-icon> CERRAR SESIÓN
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <br>
+    <img src="../../../../assets/img/wro/volunteer.svg" width="100px" height="100px"
+      style="border-radius: 50%; margin-left: 1rem; display: inline;" alt="Profile Pic">
+    <h1 style="font-weight: 700; margin-left: 3rem; display: inline;">¡Bienvenido al Panel Administrativo de WRO - 2023!
+    </h1>
+
+    <br><br>
+    <mat-divider></mat-divider>
+
+    <section style="background-color: rgba(206, 207, 207, 0.384);">
+      <div style="justify-content: center; align-items: center; display: flex;">
+        <h1 style="font-weight: 700; margin-top: 2rem;">INFORMACION DE REGISTROS VOLUNTARIOS</h1>
+      </div>
+      <br>
+      <!--TABLE OF USERS-->
+      <mat-form-field style="margin-left: 1rem;">
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar Voluntario">
+      </mat-form-field>
+      <button mat-flat-button color="accent" style="margin-left: 30rem;" (click)="open(registerVolunteer)">Agregar
+        Voluntario</button>
+
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Nombre Completo </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="shirt">
+          <th mat-header-cell *matHeaderCellDef> Talla Camisa </th>
+          <td mat-cell *matCellDef="let element"> {{element.shirt}} </td>
+        </ng-container>
+
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="dayOne">
+          <th mat-header-cell *matHeaderCellDef> Asistencia Dia 1 </th>
+          <td mat-cell *matCellDef="let element"> <mat-slide-toggle checked="{{element.dayOne}}" (click)="registerAsistence(element.id, element.dayOne)" [disabled]="element.dayOne"></mat-slide-toggle>
+          </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="timeRegisteredOne">
+          <th mat-header-cell *matHeaderCellDef> Hora Ingreso </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.timeRegisteredOne}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="timeOutOne">
+          <th mat-header-cell *matHeaderCellDef> Hora Salida </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.timeOutOne}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acciones">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+
+            <mat-icon title="Ver Datos Voluntario" style="cursor: pointer; color: blue;"
+              (click)="getVolunteer(element)">visibility</mat-icon>
+              <mat-icon title="Terminar dia" style="cursor: pointer; color: green; margin-left: 10px;"
+              (click)="dayFinished(element.id)">check_circle</mat-icon>
+          </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </section>
+
+    <br><br>
+    <mat-divider style="margin-top: 1%"></mat-divider>
+<div class="main">
+  <p style="font-weight: 200; color: grey;">Realizado con <mat-icon style="size: 5px;">favorite</mat-icon> por <a href="https://www.sofiavidea.com" style="color:grey">Sofia Videa</a></p>
+</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!--MODAL REGISTRAR VOLUNTARIO-->
+<ng-template #registerVolunteer let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Registrar Voluntario</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <div class="input-group">
+          <input class="form-control" id="nameV" placeholder="Nombre" name="nameV" type="text" required />
+          <br>
+          <input class="form-control" id="phoneV" placeholder="Teléfono" name="phone" type="tel" required />
+          <br>
+          <input class="form-control" id="emailV" placeholder="Correo" name="email" type="email" />
+          <br>
+          <input class="form-control" id="shirtV" placeholder="Talla Camisa" name="shirt" type="text" required />
+          <br>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="sendVolunteer()">Guardar</button>
+  </div>
+</ng-template>
