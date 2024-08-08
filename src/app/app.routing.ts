@@ -15,6 +15,8 @@ const appRoute: Routes=[
   {path: '', redirectTo: '/welcome', pathMatch:'full'},
   {path: 'welcome', component:WelcomeComponent},
   {path: 'loginAdmin', component: LoginAdminComponent},
+  {path: 'central', component: DashboardAdminComponent},
+  {path: 'empleados', component: VolunteerInfoComponent},
 
   //Admin es el componente padre
   {path: 'admin', children: [
